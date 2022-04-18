@@ -1,0 +1,13 @@
+; example systemd configuration
+[Unit]
+Description=nifscp
+After=network.target
+
+[Service]
+User=nifsupport
+Group=nifsupport
+Environment=ORTHANC_IP_ADDRESS=127.0.0.1 DATADIR=/path/to/dicom/files DEBUG=0
+ExecStart=/srv/nifscp/bin/python /srv/nifscp/scp.py
+
+[Install]
+WantedBy=default.target
