@@ -4,7 +4,7 @@ serve:
 test:
 	storescu -xf storescu.cfg Default -v localhost 104 in/*.dcm
 
-install:
+install-service:
 	cp nifscp.service /etc/systemd/system
 	systemctl daemon-reload
 
